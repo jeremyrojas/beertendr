@@ -14,6 +14,7 @@ public class OpenAiChatController {
 
     @GetMapping("/chat")
     public void chat(@RequestParam String prompt) {
+        //TODO: create String template for prompt and concatenate with beer input from frontend
         openAiChatService.sendMessageToOpenAIChat(prompt);
     }
 
