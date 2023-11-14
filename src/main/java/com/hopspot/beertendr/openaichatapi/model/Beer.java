@@ -1,5 +1,9 @@
 package com.hopspot.beertendr.openaichatapi.model;
 
+/**
+ * Beer is an entity to save OpenAI's beer recommendations
+ * TODO: Build out persistence entities with Spring Data JPA
+ */
 public class Beer {
 
     String breweryName;

@@ -1,5 +1,9 @@
 package com.hopspot.beertendr.openaichatapi.model;
 
+/**
+ * Choice is a property of Open AI's Chat Completion response object
+ * Choice contains {@link Message}, which contains the actual text reply
+ */
 public class Choice {
 
     private int index;

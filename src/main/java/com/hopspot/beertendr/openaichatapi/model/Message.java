@@ -1,5 +1,9 @@
 package com.hopspot.beertendr.openaichatapi.model;
 
+/**
+ * Message is a property of {@link Choice}, from Open AI's Chat Completion response object
+ * Message contains the actual chat text reply
+ */
 public class Message {
 
     private String role;
