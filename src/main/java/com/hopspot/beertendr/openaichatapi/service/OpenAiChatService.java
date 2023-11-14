@@ -2,6 +2,8 @@ package com.hopspot.beertendr.openaichatapi.service;
 
 import com.hopspot.beertendr.openaichatapi.dto.OpenAiChatRequest;
 import com.hopspot.beertendr.openaichatapi.dto.OpenAiChatResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class OpenAiChatService {
 
+    Logger logger = LoggerFactory.getLogger(OpenAiChatService.class);
     @Qualifier("openaiRestTemplate")
     @Autowired
     private RestTemplate openaiRestTemplate;
@@ -33,6 +36,7 @@ public class OpenAiChatService {
 
     private void saveOpenAIChatResponse(OpenAiChatResponse openAiChatResponse) {
         if (isValidOpenAIChatResponse(openAiChatResponse)) {
+            logger.info("Valid OpenAIChatResponse received: " + openAiChatResponse.getChoices().get(0).getMessage().getContent());
             // save to response data to database
             // put on rabbit MQ for consumption by beer rating microservice
         }
